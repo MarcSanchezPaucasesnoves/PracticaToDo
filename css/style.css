@@ -2,6 +2,8 @@
 :root{
     --color-blue: #3a83f6;
     --color-blue-hover: #2563ea;
+    --color-gray: #F3F5F5;
+    --color-border-gray: #D3D3D3;
     --border-radius: 5px;
 }
 
@@ -12,12 +14,33 @@ body{
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-template-rows: auto auto;
-    
+    background-color: var(--color-gray);
 }
 header{
     grid-column: 1;
     grid-row: 1/3;
     min-height: 100vh;
+}
+input{
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-gray);
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+button{
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    background-color: var(--color-blue);
+    border: 0px;
+    height: 30px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: var(--color-blue-hover);
 }
 
 
@@ -45,6 +68,24 @@ header{
     border-radius: var(--border-radius);
 }
 
+/* Form pujar tasca (index.html) */
+.form-pujar-tasca{
+    height: 75px;
+    background-color: white;
+}
+
+/* Box */
+.box-sizing-border-box{
+    box-sizing: border-box;
+}
+
+/* Height */
+.heigth-30px{
+    height: 30px;
+}
+
+
+/* Width */
 
 /* Margin */
 .margin-left-5pc{
@@ -60,8 +101,21 @@ header{
 }
 
 /* Padding */
+.padding-left-20px{
+    padding-left: 20px;
+}
+.padding-right-20px{
+    padding-right: 20px;
+}
+
+.padding-10px{
+    padding: 10px;
+}
 
 /* Gap */
+.gap-15px{
+    gap: 15px;
+}
 .gap-20px{
     gap: 20px;
 }
@@ -78,6 +132,9 @@ header{
 .justify-content-center{
     justify-content: center;
 }
+.justify-content-space-between{
+    justify-content: space-between;
+}
 .align-items-center{
     align-items: center;
 }
@@ -92,6 +149,23 @@ header{
 
 /* Text */
 
+
+/* Border */
+.border-radius{
+    border-radius: var(--border-radius);
+}
+.border-0px{
+    border: 0px;
+}
+.border-color-border-gray{
+    border: 1px solid var(--color-border-gray);
+}
+
+
+/* Cursor */
+.cursor-pointer{
+    cursor: pointer;
+}
 
 /* Colors */
 .bg-color-blue{
