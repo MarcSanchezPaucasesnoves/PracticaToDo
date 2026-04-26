@@ -47,6 +47,14 @@ header{
 
 
 /* Margin */
+.margin-left-5pc{
+    margin-left: 5%;
+}
+.margin-right-5pc{
+    margin-right: 5%;
+}
+
+
 .margin-left-15px{
     margin-left: 15px;
 }
@@ -73,11 +81,17 @@ header{
 .align-items-center{
     align-items: center;
 }
+.text-align-center{
+    text-align: center;
+}
 
 /* Grid */
 .grid{
     display: grid;
 }
+
+/* Text */
+
 
 /* Colors */
 .bg-color-blue{
