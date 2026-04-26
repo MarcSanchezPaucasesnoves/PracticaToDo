@@ -23,8 +23,44 @@
 	        </nav>
         </header>
 
-        <main class="margin-left-20pc margin-right-20pc">
+        <main class="margin-left-30pc margin-right-30pc">
             <h1 class="text-align-center">Crear Nova Tasca</h1>
+
+            <form action="" class="flex flex-direction-column form-crear-tasca align-items-flex-start gap-20px border-radius justify-content-space-between align-items-center padding-20px">
+                <div class="width-100pc">
+                    <label for="titol" class="width-100pc">Títol:</label>
+                    <input type="text" id="titol" class="width-100pc">
+                </div>
+                
+                <div class="width-100pc">
+                    <label for="descripcio" class="width-100pc">Descripció:</label>
+                    <textarea name="descripcio" id="descripcio" rows="3" class="width-100pc"></textarea>
+                </div>
+                
+                <div class="width-100pc">
+                    <label for="data" class="width-100pc">Data:</label>
+                    <input type="date" id="data" class="width-100pc">
+                </div>
+                
+                <div class="width-100pc">
+                    <label for="categoria" class="width-100pc">Categoria:</label>
+                    <select name="categoria" id="categoria" class="width-100pc">
+                        
+                    </select>
+                </div>
+                
+                <div class="width-100pc">
+                    <label for="prioritat" class="width-100pc">Prioritat:</label>
+                    <select name="prioritat" id="prioritat" class="width-100pc">
+                        <option value="">Baixa</option>
+                        <option value="">Mitjana</option>
+                        <option value="">Alta</option>
+                    </select>
+                </div>
+
+                <button>Crear Tasca</button>
+                
+            </form>
         </main>
 	    
         <footer class="">
