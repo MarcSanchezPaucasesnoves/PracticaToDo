@@ -223,7 +223,14 @@ button:hover{
 }
 
 /* Text */
+.font-size-10px{
+    font-size: 14px;
+}
 
+/* Ocultar */
+.hide{
+    display: none;
+}
 
 /* Border */
 .border-radius{
@@ -261,4 +268,7 @@ button:hover{
 }
 .color-white{
     color: white;
+}
+.color-red{
+    color: red;
 }

@@ -2,19 +2,27 @@ import { crearCategoria, eliminarCategoria } from "../js/storage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const errorCategoria = document.getElementById("errorCategoria");
+    const nomCategoria = document.getElementById("categoria");
+    const colorCategoria = document.getElementById("colorCategoria");
+
     if (!localStorage.getItem("llistaCategories")) {
         localStorage.setItem("llistaCategories", JSON.stringify([]));
     }
 
     document.getElementById("afegirCategoria").addEventListener("click", (event) => {
         event.preventDefault();
-        const nomCategoria = document.getElementById("categoria").value.trim();
-        const colorCategoria = document.getElementById("colorCategoria").value.trim();
-        const novaCategoria = crearCategoria(nomCategoria, colorCategoria);
+        const novaCategoria = crearCategoria(nomCategoria.value.trim(), colorCategoria.value.trim());
 
         if(novaCategoria){
             pintarCategories();
+        } else{
+            errorCategoria.classList.remove("hide");
         }
+    });
+
+    document.getElementById("categoria").addEventListener("click", (event) => {
+        errorCategoria.classList.add("hide");
     });
 
     pintarCategories();
