@@ -4,6 +4,8 @@
     --color-blue-hover: #2563ea;
     --color-gray: #F3F5F5;
     --color-border-gray: #D3D3D3;
+    --color-task-red:  #fccccc;
+    --color-task-completed-red: #F8DFE0;
     --border-radius: 5px;
 }
 
@@ -110,6 +112,22 @@ button:hover{
     background-color: #ea0000;
 }
 
+/* Tasques */
+.categoria-tasca-pendent {
+    font-size: 13px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-blue);
+    padding: 5px;
+    width: fit-content;
+    color: white;
+}
+.contenidor-tasques{
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 
 /* Height */
 .heigth-30px{
@@ -125,6 +143,9 @@ button:hover{
 
 
 /* Width */
+.width-33pc{
+    width: 33%;
+}
 .width-100pc{
     width: 100%;
 }
@@ -179,6 +200,9 @@ button:hover{
 }
 
 /* Gap */
+.gap-5px{
+    gap: 5px;
+}
 .gap-10px{
     gap: 10px;
 }
@@ -210,6 +234,9 @@ button:hover{
 .align-items-flex-start{
     align-items: flex-start;
 }
+.align-items-flex-end{
+    align-items: flex-end;
+}
 .text-align-center{
     text-align: center;
 }
@@ -225,6 +252,9 @@ button:hover{
 /* Text */
 .font-size-10px{
     font-size: 14px;
+}
+.font-size-13px{
+    font-size: 13px;
 }
 
 /* Ocultar */
@@ -265,6 +295,12 @@ button:hover{
 }
 .bg-color-gray{
     background-color: var(--color-gray);
+}
+.bg-color-task-red{
+    background-color: var(--color-task-red);
+}
+.bg-color-task-completed-red{
+    background-color: var(--color-task-completed-red);
 }
 .color-white{
     color: white;
