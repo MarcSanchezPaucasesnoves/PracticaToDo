@@ -4,16 +4,9 @@ export function crearCategoria(nom, color){
         nom: nom,
         color: color
     };
-    let existeix = false;
 
-    for (let index = 0; index < categories.length; index++) {
-        if (categories[index].nom.toLowerCase() === novaCategoria.nom.toLowerCase()) {
-            existeix = true;
-            break;
-        }
-    }
 
-    if (!existeix) {
+    if (!comprovarCategoria(nom)) {
         categories.push(novaCategoria);
         localStorage.setItem("llistaCategories", JSON.stringify(categories));
         return true;
@@ -77,12 +70,12 @@ export function crearTasca(titol, descripcio, data, categoria, prioritat){
     
 }
 
-export function comprovarCategoria(categoria){
+export function comprovarCategoria(nom){
     const categories = JSON.parse(localStorage.getItem("llistaCategories"));
     let existeix = false;
 
     for (let index = 0; index < categories.length; index++) {
-        if (categories[index].nom === categoria) {
+        if (categories[index].nom === nom) {
             existeix = true;
             break;
         }
