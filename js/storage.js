@@ -100,3 +100,9 @@ export function crearLlistaTasques(){
         localStorage.setItem("llistaTasques", JSON.stringify([]));
     }
 }
+
+export function crearLlistaCategories(){
+    if (!localStorage.getItem("llistaCategories")) {
+        localStorage.setItem("llistaCategories", JSON.stringify([]));
+    }
+}

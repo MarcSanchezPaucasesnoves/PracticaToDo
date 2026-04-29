@@ -1,4 +1,4 @@
-import { crearCategoria, eliminarCategoria } from "../js/storage.js";
+import { crearCategoria, eliminarCategoria, crearLlistaCategories } from "../js/storage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nomCategoria = document.getElementById("categoria");
     const colorCategoria = document.getElementById("colorCategoria");
 
-    if (!localStorage.getItem("llistaCategories")) {
-        localStorage.setItem("llistaCategories", JSON.stringify([]));
-    }
+    crearLlistaCategories();
 
     document.getElementById("afegirCategoria").addEventListener("click", (event) => {
         event.preventDefault();
