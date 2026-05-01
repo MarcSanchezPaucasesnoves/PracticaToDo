@@ -81,6 +81,21 @@ export function crearTasca(titol, descripcio, data, categoria, prioritat) {
 
 }
 
+export function eliminarTasca(id){
+    const tasques = JSON.parse(localStorage.getItem("llistaTasques"));
+
+    for (let index = 0; index < tasques.length; index++) {
+        const tasca = tasques[index];
+        const idTasca = tasca.id;
+
+        if (idTasca == id) {
+            tasques.splice(index, 1);
+            localStorage.setItem("llistaTasques", JSON.stringify(tasques));
+            break;
+        }
+    }
+}
+
 export function comprovarCategoria(nom){
     const categories = JSON.parse(localStorage.getItem("llistaCategories"));
     let existeix = false;
