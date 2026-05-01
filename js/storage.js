@@ -42,42 +42,59 @@ export function eliminarCategoria(nom){
     }
 }
 
-export function crearTasca(titol, descripcio, data, categoria, prioritat) {
+export function crearTasca(titol, descripcio, data, categoria, prioritat, id, realitzada) {
     const tasques = JSON.parse(localStorage.getItem("llistaTasques"));
 
-    if (tasques.length == 0) {
+    if (id == undefined) {
+        if (tasques.length == 0) {
 
-        const novaTasca = {
-            id: 1,
-            titol: titol,
-            descripcio: descripcio,
-            data: data,
-            categoria: categoria,
-            prioritat: prioritat,
-            realitzada: false
-        };
-        tasques.push(novaTasca);
-        localStorage.setItem("llistaTasques", JSON.stringify(tasques));
-        localStorage.setItem("idTask", 2);
+            const novaTasca = {
+                id: 1,
+                titol: titol,
+                descripcio: descripcio,
+                data: data,
+                categoria: categoria,
+                prioritat: prioritat,
+                realitzada: false
+            };
+            tasques.push(novaTasca);
+            localStorage.setItem("llistaTasques", JSON.stringify(tasques));
+            localStorage.setItem("idTask", 2);
 
+        } else {
+
+            const idTask = parseInt(localStorage.getItem("idTask"));
+            const novaTasca = {
+                id: idTask,
+                titol: titol,
+                descripcio: descripcio,
+                data: data,
+                categoria: categoria,
+                prioritat: prioritat,
+                realitzada: false
+            };
+
+            tasques.push(novaTasca);
+            localStorage.setItem("llistaTasques", JSON.stringify(tasques));
+            localStorage.setItem("idTask", idTask + 1);
+
+        }
     } else {
-
-        const idTask = parseInt(localStorage.getItem("idTask"));
         const novaTasca = {
-            id: idTask,
+            id: id,
             titol: titol,
             descripcio: descripcio,
             data: data,
             categoria: categoria,
             prioritat: prioritat,
-            realitzada: false
+            realitzada: realitzada
         };
 
         tasques.push(novaTasca);
         localStorage.setItem("llistaTasques", JSON.stringify(tasques));
-        localStorage.setItem("idTask", idTask + 1);
-
     }
+
+    
 
 }
 
@@ -132,6 +149,21 @@ export function comprovarCategoria(nom){
 
 export function comprovarTitolTasca(titol){
     return titol.trim().length > 0;
+}
+
+export function existeixIdTasca(id){
+    const tasques = JSON.parse(localStorage.getItem("llistaTasques"));
+
+    for (let index = 0; index < tasques.length; index++) {
+        const tasca = tasques[index];
+        
+        if (tasca.id == id) {
+            return true;
+            break;
+        }
+    }
+
+    return false;
 }
 
 export function crearLlistaTasques(){

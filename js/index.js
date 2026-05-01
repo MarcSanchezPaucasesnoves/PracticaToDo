@@ -1,11 +1,26 @@
-import { eliminarTasca, canviarTascaRealitzada } from "../js/storage.js";
+import { eliminarTasca, canviarTascaRealitzada, crearLlistaTasques, crearLlistaCategories } from "../js/storage.js";
+import { recuperarValidarTasques } from "./models.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    crearLlistaCategories();
+    crearLlistaTasques();
     pintarTasques();
 
     document.getElementById('crearNovaTasca').addEventListener('click', (event) => {
         event.preventDefault();
         window.location.href = "crear-tasca.html";
+    });
+
+    document.getElementById("botoPujar").addEventListener('click', async (event) => {
+        event.preventDefault();
+        
+        const arxiuTasques = document.getElementById("arxiuTasques");
+        const rutaArxiu = "../dades/" + arxiuTasques.value;
+
+
+        await recuperarValidarTasques(rutaArxiu);
+
+        pintarTasques();
     });
 });
 
