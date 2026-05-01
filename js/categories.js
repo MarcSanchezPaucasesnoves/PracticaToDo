@@ -1,4 +1,4 @@
-import { crearCategoria, eliminarCategoria, crearLlistaCategories } from "../js/storage.js";
+import { crearCategoria, eliminarCategoria, crearLlistaCategories, crearLlistaTasques } from "../js/storage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorCategoria = document.getElementById("colorCategoria");
 
     crearLlistaCategories();
+    crearLlistaTasques();
 
     document.getElementById("afegirCategoria").addEventListener("click", (event) => {
         event.preventDefault();

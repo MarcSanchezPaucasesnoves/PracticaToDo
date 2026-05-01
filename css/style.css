@@ -4,8 +4,6 @@
     --color-blue-hover: #2563ea;
     --color-gray: #F3F5F5;
     --color-border-gray: #D3D3D3;
-    --color-task-red:  #fccccc;
-    --color-task-completed-red: #F8DFE0;
     --border-radius: 5px;
 }
 
@@ -295,12 +293,6 @@ button:hover{
 }
 .bg-color-gray{
     background-color: var(--color-gray);
-}
-.bg-color-task-red{
-    background-color: var(--color-task-red);
-}
-.bg-color-task-completed-red{
-    background-color: var(--color-task-completed-red);
 }
 .color-white{
     color: white;

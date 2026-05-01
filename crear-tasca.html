@@ -30,6 +30,7 @@
                 <div class="width-100pc flex flex-direction-column gap-10px">
                     <label for="titol" class="width-100pc">Títol:</label>
                     <input type="text" name="titol" id="titol" class="width-100pc" required>
+                    <p id="errorTitolTasca" class="hide color-red text-align-center font-size-10px">Aquest nom no és vàlid!!</p>
                 </div>
                 
                 <div class="width-100pc flex flex-direction-column gap-10px">
@@ -47,6 +48,7 @@
                     <select name="categoria" id="categoria" class="width-100pc">
                         
                     </select>
+                    <p id="errorCategoriaTasca" class="hide color-red text-align-center font-size-10px">No s'ha seleccionat cap categoria!!</p>
                 </div>
                 
                 <div class="width-100pc flex flex-direction-column gap-10px">
@@ -58,7 +60,7 @@
                     </select>
                 </div>
 
-                <button>Crear Tasca</button>
+                <button id="botoCrearTasca">Crear Tasca</button>
                 
             </form>
         </main>
