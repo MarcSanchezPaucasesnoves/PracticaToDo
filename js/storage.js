@@ -28,7 +28,7 @@ export function eliminarCategoria(nom){
             // Eliminar tasques asociades a aquesta categoria
             for (let index2 = 0; index2 < tasques.length; index2++) {
                 const tasca = tasques[index2];
-                const categoriaTasca = tasca.categoria;
+                const categoriaTasca = tasca.categoria.nom;
 
                 if (categoriaTasca === nom) {
                     tasques.splice(index2, 1);
@@ -90,6 +90,26 @@ export function eliminarTasca(id){
 
         if (idTasca == id) {
             tasques.splice(index, 1);
+            localStorage.setItem("llistaTasques", JSON.stringify(tasques));
+            break;
+        }
+    }
+}
+
+export function canviarTascaRealitzada(id){
+    const tasques = JSON.parse(localStorage.getItem("llistaTasques"));
+    
+    for (let index = 0; index < tasques.length; index++) {
+        const tasca = tasques[index];
+        const idTasca = tasca.id;
+
+        if (idTasca == id) {
+            if (tasca.realitzada) {
+                tasca.realitzada = false;
+            } else {
+                tasca.realitzada = true;
+            }
+
             localStorage.setItem("llistaTasques", JSON.stringify(tasques));
             break;
         }
