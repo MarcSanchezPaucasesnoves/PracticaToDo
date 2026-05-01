@@ -2,6 +2,11 @@ import { eliminarTasca, canviarTascaRealitzada } from "../js/storage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     pintarTasques();
+
+    document.getElementById('crearNovaTasca').addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = "crear-tasca.html";
+    });
 });
 
 function pintarTasques(){
