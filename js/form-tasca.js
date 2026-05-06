@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const categoria = tornarCategoria(categoriaText);
 
             crearTasca(titol, descripcio, data, categoria, prioritat);
+
+            resetejarContingutInputs();
         }
 
     });
@@ -66,4 +68,14 @@ function refrescarCategories(){
 
     }
 
+}
+
+function resetejarContingutInputs() {
+    const titol = document.getElementById('titol');
+    const descripcio = document.getElementById('descripcio');
+    const data = document.getElementById('data');
+
+    titol.value = "";
+    descripcio.value = "";
+    data.value = "";
 }
