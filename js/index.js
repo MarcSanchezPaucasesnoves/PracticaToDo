@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         await recuperarValidarTasques(rutaArxiu);
 
+        arxiuTasques.value = "";
         pintarTasques();
     });
 });

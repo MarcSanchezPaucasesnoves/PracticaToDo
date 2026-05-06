@@ -67,6 +67,6 @@ export async function recuperarValidarTasques(rutaArxiu) {
 
 
     } catch (error) {
-        console.log("Error");
+        alert("No s'ha trobat l'arxiu especificat en el servidor");
     }
 };
