@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(novaCategoria){
             pintarCategories();
+            nomCategoria.value = "";
         } else{
             errorCategoria.classList.remove("hide");
         }
