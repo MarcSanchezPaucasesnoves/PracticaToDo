@@ -189,3 +189,26 @@ export function tornarCategoria(nom){
         }
     }
 }
+
+
+export function tornarTasquesFetesChart(){
+    const tasques = JSON.parse(localStorage.getItem("llistaTasques"));
+    
+    let tasquesRealitzades = new Array(12).fill(0);
+
+    for (let index = 0; index < tasques.length; index++) {
+        const tasca = tasques[index];
+        const realitzada = tasca.realitzada;
+        const dataStr = tasca.data;
+
+        if (realitzada && dataStr !== "") {
+            const data = new Date(dataStr);
+
+            const mes = data.getMonth();
+
+            tasquesRealitzades[mes] += 1;
+        }
+    }
+
+    return tasquesRealitzades;
+}

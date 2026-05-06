@@ -1,10 +1,16 @@
-import { eliminarTasca, canviarTascaRealitzada, crearLlistaTasques, crearLlistaCategories } from "../js/storage.js";
+import { eliminarTasca, canviarTascaRealitzada, crearLlistaTasques, crearLlistaCategories, tornarTasquesFetesChart } from "./storage.js";
+import { crearGrafic } from "./grafics.js";
 import { recuperarValidarTasques } from "./models.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     crearLlistaCategories();
     crearLlistaTasques();
     pintarTasques();
+
+
+    const chart = document.getElementById('chart');
+    const dades = tornarTasquesFetesChart();
+    crearGrafic(chart, dades);
 
     document.getElementById('crearNovaTasca').addEventListener('click', (event) => {
         event.preventDefault();
@@ -96,11 +102,19 @@ function pintarTasques(){
         iconaFet.addEventListener('click', () => {
             canviarTascaRealitzada(idTasca);
             pintarTasques();
+
+            const chart = document.getElementById('chart');
+            const dades = tornarTasquesFetesChart();
+            crearGrafic(chart, dades);
         });
 
         iconaEliminar.addEventListener('click', () => {
             eliminarTasca(idTasca);
             pintarTasques();
+
+            const chart = document.getElementById('chart');
+            const dades = tornarTasquesFetesChart();
+            crearGrafic(chart, dades);
         });
 
 
