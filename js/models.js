@@ -15,7 +15,7 @@ export async function recuperarValidarTasques(rutaArxiu) {
                     nom: { type: "string" },
                     color: { type: "string" }
                 },
-                required: ["nombre", "color"],
+                required: ["nom", "color"],
                 additionalProperties: false
             },
             prioritat: { type: "string", enum: ["Baixa", "Mitjana", "Alta"] },
@@ -33,19 +33,18 @@ export async function recuperarValidarTasques(rutaArxiu) {
         const tasques = await resposta.json();
 
         const validar = ajv.compile(schema);
-        const resultat = validar(tasques[0]);
-
-        if (resultat) {
-            console.log("Correctes");
-        } else {
-            console.log("Dades amb un format incorrecte");
-        }
 
 
         let errorId = false;
 
         for (let index = 0; index < tasques.length; index++) {
             const tasca = tasques[index];
+            const resultatValidar = validar(tasca);
+
+            if (!resultatValidar) {
+                errorId = true;
+                break;
+            }
             
             if (existeixIdTasca(tasca.id)) {
                 errorId = true;
@@ -63,7 +62,7 @@ export async function recuperarValidarTasques(rutaArxiu) {
                 crearTasca(tasca.titol, tasca.descripcio, tasca.data, tasca.categoria, tasca.prioritat, tasca.id, tasca.realitzada);
             });
         } else {
-            alert("Una id d'una de les tasques ja existeix");
+            alert("Una de les tasques té una id que ja existeix o no té el format correcte");
         }
 
 
